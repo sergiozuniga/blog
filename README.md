@@ -63,46 +63,46 @@ Para ejecutar esta aplicación, deberá seguir estos 3 pasos:
 
 #### 2. Configuración local y ejecución en Windows, Linux y Mac OS
 
-Clone este repositorio en el directorio de su elección
+* Clone este repositorio en el directorio de su elección
 $ git clone https://github.com/sergiozuniga/blog.git
 
-Mover a la carpeta del proyecto
+* Mover a la carpeta del proyecto
 $ cd blog
 
-Inicializar un nuevo entorno virtual
+* Inicializar un nuevo entorno virtual
 $ python3 -m venv .env
 
-Activar el entorno virtual
+* Activar el entorno virtual
 $ source .env/bin/activate
 
-Instalar paquetes de python
+* Instalar paquetes de python
 $ pip3 install -r requirements.txt
  
-Ejecutar el cliente mysql
+* Ejecutar el cliente mysql
 $ mysql -u root -p
 
-Crear base de datos en MySQL
+* Crear base de datos en MySQL
 mysql> create database mydb;
   
-Crear tablas de base de datos
+* Crear tablas de base de datos
 $ python3 manage.py migrate
   
-Crear una cuena de super usuario
+* Crear una cuena de super usuario
 $ python3 manage.py createsuperuser
 
-Iniciar servidor
+* Iniciar servidor
 $ python3 manage.py runserver
   
-Copiar la dirección IP provista una vez que su servidor haya completado la construcción del sitio. (Dirá algo como >> Sirviendo en 127.0.0.1....).
+* Copiar la dirección IP provista una vez que su servidor haya completado la construcción del sitio. (Dirá algo como >> Sirviendo en 127.0.0.1....).
   
-Abrir la dirección en el navegador.
->>> http://127.0.0.1:XXXX
+* Abrir la dirección en el navegador.
+http://127.0.0.1:XXXX
   
-Iniciar sesión en Tablero para escribir artículos
->>> http://127.0.0.1:8000/author/dashboard/home/
+* Iniciar sesión en Tablero para escribir artículos
+http://127.0.0.1:8000/author/dashboard/home/
   
-Django Admin
->>> http://127.0.0.1:XXXX/admin/
+* Django Admin
+http://127.0.0.1:XXXX/admin/
   
 
 ## Licencia
