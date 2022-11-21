@@ -47,21 +47,22 @@ Una plataforma de blogs web de código abierto construida con Python y Django.
 
 Para ejecutar esta aplicación, deberá seguir estos 3 pasos:
 
+
 #### 1. Requerimientos
-  - a Computador
+
+  - Un computador
 
   - Editor de Texto o IDE (pej. VScode, PyCharm)
-
-  - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) instalado en su computador.
-
-
-#### 2. Python Instalado
-  - [Python3](https://www.python.org/downloads/)
   
+  - Git instalado
+  
+  - Python instalado
+  
+  - Pip instalado
 
-#### 3. Configuración local y ejecución en Windows, Linux y Mac OS
 
-  ```
+#### 2. Configuración local y ejecución en Windows, Linux y Mac OS
+
   # Clone este repositorio en el directorio de su elección
   $ git clone https://github.com/sergiozuniga/blog.git
 
