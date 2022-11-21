@@ -63,7 +63,7 @@ Para ejecutar esta aplicación, deberá seguir estos 3 pasos:
 
 #### 2. Configuración local y ejecución en Windows, Linux y Mac OS
 
-* Clone este repositorio en el directorio de su elección
+* Clonar este repositorio en el directorio de su elección
 $ git clone https://github.com/sergiozuniga/blog.git
 
 * Mover a la carpeta del proyecto
