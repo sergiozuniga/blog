@@ -2,51 +2,51 @@
 {% load static %}
 
 {% block title %}
-    Register
+    Registro
 {% endblock title %}
 
 {% block content %}
 
 				<span class="login100-form-title p-b-41">
-					Register
+					Registro
 				</span>
 				<form action="{% url 'blog:register' %}" class="login100-form p-b-33 p-t-5"
                       method="post" novalidate>
                     {% csrf_token %}
 
-                    <div class="wrap-input100 validate-input" data-validate = "Enter Username">
+                    <div class="wrap-input100 validate-input" data-validate = "Usuario">
 						{{ register_form.username }}
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Enter Email">
+                    <div class="wrap-input100 validate-input" data-validate = "Email">
 						{{ register_form.email }}
 						<span class="focus-input100" data-placeholder="&#xe818;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
+					<div class="wrap-input100 validate-input" data-validate="Contraseña">
 						{{ register_form.password1 }}
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <div class="wrap-input100 validate-input" data-validate="Repetir contraseña">
 						{{ register_form.password2 }}
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
 						<button type="submit" class="login100-form-btn">
-							Register
+							Registro
 						</button>
                     </div>
                     <hr />
                     <div class="text-center">
                       <a class="small text-primary" href="{% url 'blog:login' %}"
-                        >Already Have an Account!</a>
+                        >¡Ya tienes una cuenta!</a>
                     </div>
                     <div class="text-center font-weight-bold">
                       <a class="small text-info" href="{% url 'blog:home' %}">
-                          Home
+                          Inicio
                       </a>
                     </div>
 				</form>

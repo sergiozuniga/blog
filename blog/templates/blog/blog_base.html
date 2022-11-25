@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="es">
 <head>
 
     <!-- Favicon-->
@@ -51,11 +51,11 @@
 			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
 			<ul class="main-menu visible-on-click" id="main-menu">
-{#				<li><a href="{% url 'blog:authors_list' %}">Authors</a></li>#}
+{#				<li><a href="{% url 'blog:authors_list' %}">Autores</a></li>#}
 				<li><a href="{% url 'blog:categories_list' %}">Categorías</a></li>
                 <li><a href="#">Acerca</a></li>
                 {% if request.user.is_authenticated %}
-                    <li><a href="{% url 'blog:dashboard_home' %}">Mensajes</a></li>
+                    <li><a href="{% url 'blog:dashboard_home' %}">Tablero</a></li>
                     <li><a href="{% url 'blog:logout' %}">Cerrar sesión</a></li>
                 {% else %}
                     <li><a href="{% url 'blog:login' %}">Iniciar sesión</a></li>
@@ -112,7 +112,7 @@
 {#						<a class="logo" href="#">#}
 {#                            <img src="{% static 'blog/images/logo.png' %}"#}
 {#                                 alt="Logo Image"></a>#}
-{#						<p class="copyright">Bona @ 2018 - 2020. All rights reserved.</p>#}
+{#						<p class="copyright">Chat @ 2022. Todos los derechos reservados.</p>#}
 {##}
 {#						<ul class="icons">#}
 {#							<li><a href="#">#}
@@ -147,14 +147,14 @@
 {#						<div class="footer-section">#}
 {#						<h4 class="title"><b>MENU</b></h4>#}
 {#						<ul>#}
-{#							<li><a href="{% url 'blog:login' %}">Login</a></li>#}
-{#							<li><a href="#">HEALTH</a></li>#}
-{#							<li><a href="#">MUSIC</a></li>#}
+{#							<li><a href="{% url 'blog:login' %}">Ingresar</a></li>#}
+{#							<li><a href="#">SALUD</a></li>#}
+{#							<li><a href="#">MUSICA</a></li>#}
 {#						</ul>#}
 {#						<ul>#}
-{#                            <li><a href="{% url 'blog:register' %}">Sign Up</a></li>#}
-{#							<li><a href="#">DESIGN</a></li>#}
-{#							<li><a href="#">TRAVEL</a></li>#}
+{#                            <li><a href="{% url 'blog:register' %}">Registrarse</a></li>#}
+{#							<li><a href="#">DISEÑO</a></li>#}
+{#							<li><a href="#">VIAJE</a></li>#}
 {#						</ul>#}
 {#					</div><!-- footer-section -->#}
 {#				</div><!-- col-lg-4 col-md-6 -->#}
@@ -162,7 +162,7 @@
 {#				<div class="col-lg-4 col-md-6">#}
 {#					<div class="footer-section">#}
 {##}
-{#						<h4 class="title"><b>SUBSCRIBE</b></h4>#}
+{#						<h4 class="title"><b>SUSCRIBIRSE</b></h4>#}
 {#						<div class="input-area">#}
 {#							<form>#}
 {#								<input class="email-input" type="text"#}

@@ -1,7 +1,7 @@
 {% extends "account/account_base.html" %}
 
 {% block title %}
-    Account Activation Sent
+    Activación de cuenta enviada
 {% endblock title %}
 
 {% block content %}
@@ -10,20 +10,19 @@
 
         <div class="card shadow-sm">
 
-                <h4 class="card-header">Account Activation Sent</h4>
+                <h4 class="card-header">Activación de cuenta enviada</h4>
 
                 <div class="card-body">
                         <div class="alert alert-success font-weight-bold text-dark text-center">
-
-                            Please confirm your email address to complete the registration.
+                            Por favor, confirme su dirección de correo electrónico para completar el registro.
                             <br >
-                            We have sent you an email to confirm your email address.
-                            Please check your inbox and spam folder.
+                            Le hemos enviado un correo electrónico para confirmar su dirección de correo electrónico.
+                             Por favor revise su bandeja de entrada y la carpeta de correo no deseado.
                         </div>
                     <hr />
                     <div class="text-center font-weight-bold">
                       <a class="small text-info" href="{% url 'blog:home' %}">
-                          Home
+                          Inicio
                       </a>
                     </div>
                 </div>

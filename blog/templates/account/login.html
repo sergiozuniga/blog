@@ -16,34 +16,34 @@
                       method="post" novalidate>
                     {% csrf_token %}
 
-					<div class="wrap-input100 validate-input" data-validate="Enter username">
+					<div class="wrap-input100 validate-input" data-validate="Usuario">
 						{{ login_form.username }}
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
+					<div class="wrap-input100 validate-input" data-validate="Clave">
 						{{ login_form.password }}
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
 						<button type="submit" class="login100-form-btn">
-							Login
+							Conectarse
 						</button>
                     </div>
                     <hr />
                     <div class="text-center">
                       <a class="small text-info" href="{% url 'password_reset' %}">
-                          Forgot Password?</a>
+                        ¿Has olvidado tu contraseña?</a>
                     </div>
                     <div class="text-center">
                       <a class="small text-primary" href="{% url 'blog:register' %}"
-                        >Create an Account!</a>
+                        >Crea una cuenta!</a>
                     </div>
                     <hr />
                     <div class="text-center">
                       <a class="small text-info" href="{% url 'blog:home' %}">
-                          Home
+                          Inicio
                       </a>
                     </div>
 				</form>

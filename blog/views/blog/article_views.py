@@ -54,16 +54,16 @@ class ArticleSearchListView(ListView):
 
     def get_queryset(self):
         """
-        Search for a user input in the search bar.
+         Busque una entrada de usuario en la barra de búsqueda.
 
-        It pass in the query value to the search view using the 'q' parameter.
-        Then in the view, It searches the 'title', 'slug', 'body' and fields.
+         Pasa el valor de la consulta a la vista de búsqueda usando el parámetro 'q'.
+         Luego, en la vista, busca los campos 'título', 'babosa', 'cuerpo' y.
 
-        To make the search a little smarter, say someone searches for
-        'container docker ansible' and It want to search the records where all
-        3 words appear in the article content in any order, It split the query
-        into separate words and chain them.
-        """
+         Para que la búsqueda sea un poco más inteligente, digamos que alguien busca
+         'container docker ansible' y quiere buscar los registros donde todos
+         Aparecen 3 palabras en el contenido del artículo en cualquier orden, divide la consulta
+         en palabras separadas y encadenarlas.        
+         """
 
         query = self.request.GET.get('q')
 
@@ -85,12 +85,12 @@ class ArticleSearchListView(ListView):
                 messages.success(self.request, f"Results for '{query}'")
                 return search_results.filter(status=Article.PUBLISHED, deleted=False)
         else:
-            messages.error(self.request, f"Sorry you did not enter any keyword")
+            messages.error(self.request, f"Lo sentimos, no ingresó ninguna palabra clave")
             return []
 
     def get_context_data(self, **kwargs):
         """
-            Add categories to context data
+            Agregar categorías a los datos de contexto.
         """
         context = super(ArticleSearchListView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(approved=True)
@@ -99,7 +99,7 @@ class ArticleSearchListView(ListView):
 
 class TagArticlesListView(ListView):
     """
-        List articles related to a tag.
+        Listar artículos relacionados con una etiqueta.
     """
     model = Article
     paginate_by = 12
@@ -108,7 +108,7 @@ class TagArticlesListView(ListView):
 
     def get_queryset(self):
         """
-            Filter Articles by tag_name
+            Filtrar artículos por tag_name
         """
 
         tag_name = self.kwargs.get('tag_name', '')
@@ -120,13 +120,13 @@ class TagArticlesListView(ListView):
                                                        )
 
             if not tag_articles_list:
-                messages.info(self.request, f"No Results for '{tag_name}' tag")
+                messages.info(self.request, f"No hay resultados para la etiqueta '{tag_name}'")
                 return tag_articles_list
             else:
-                messages.success(self.request, f"Results for '{tag_name}' tag")
+                messages.success(self.request, f"Resultados para la etiqueta '{tag_name}'")
                 return tag_articles_list
         else:
-            messages.error(self.request, "Invalid tag")
+            messages.error(self.request, "Etiqueta no válida")
             return []
 
     def get_context_data(self, **kwargs):

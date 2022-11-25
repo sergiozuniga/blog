@@ -1,7 +1,7 @@
 {% extends "account/account_base.html" %}
 
 {% block title %}
-    Account Activation Invalid
+    Activación de cuenta no válida
 {% endblock title %}
 
 {% block content %}
@@ -10,16 +10,16 @@
 
         <div class="card shadow-sm">
 
-                <h4 class="card-header">Invalid Link</h4>
+                <h4 class="card-header">Enlace inválido</h4>
 
                 <div class="card-body">
                         <div class="alert alert-danger font-weight-bold text-dark text-center">
-                            The confirmation link was invalid, possibly because it has already been used.
+                            El enlace de confirmación no era válido, posiblemente porque ya se ha utilizado.
                         </div>
                     <hr />
                     <div class="text-center font-weight-bold">
                       <a class="small text-info" href="{% url 'blog:home' %}">
-                          Home
+                          Inicio
                       </a>
                     </div>
                 </div>

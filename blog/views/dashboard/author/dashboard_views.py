@@ -19,7 +19,7 @@ class DashboardHomeView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         """
-        Returns the author details
+        Devuelve los detalles del autor.
         """
 
         articles_list = Article.objects.filter(author=request.user)
@@ -85,11 +85,11 @@ class ArticleWriteView(LoginRequiredMixin, View):
                 new_article.save()
                 article_create_form.save_m2m()
 
-                messages.success(request, f"Article drafted successfully.")
+                messages.success(request, f"Artículo redactado con éxito.")
                 return redirect("blog:drafted_articles")
 
             self.context_object["article_create_form"] = article_create_form
-            messages.error(request, "Please fill required fields")
+            messages.error(request, "Por favor complete los campos requeridos")
             return render(request, self.template_name, self.context_object)
 
         if action == self.PUBLISH:
@@ -112,7 +112,7 @@ class ArticleWriteView(LoginRequiredMixin, View):
                 new_article.save()
                 article_create_form.save_m2m()
 
-                messages.success(self.request, f"Article published successfully.")
+                messages.success(self.request, f"Artículo publicado con éxito.")
                 return redirect(to="blog:dashboard_article_detail", slug=new_article.slug)
 
             self.context_object["article_create_form"] = article_create_form

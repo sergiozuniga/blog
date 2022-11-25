@@ -7,12 +7,12 @@ from django.views.generic import View
 
 class UserLogoutView(View):
     """
-     Logs user out of the dashboard.
+     Desconecta al usuario.
     """
     template_name = 'account/logout.html'
 
     def get(self, request):
         logout(request)
-        messages.success(request, "You have successfully logged out.")
+        messages.success(request, "Has terminado tu sesion satisfactoriamente.")
         return render(request, self.template_name)
 

@@ -1,7 +1,7 @@
 {% extends 'blog/blog_base.html' %}
 
 {% block title %}
-    Home
+    Inicio
 {% endblock title %}
 
 
@@ -81,7 +81,7 @@
             {% else %}
                 <div class="alert alert-warning"><b>Sin artículos</b></div>
             {% endif %}
-        {# Pagination for article post #}
+        {# Paginación para publicación de artículo #}
             {% if is_paginated %}
 
                 {# Displays previous pages #}
@@ -101,7 +101,7 @@
                     {% endif %}
                  {% endfor %}
 
-                {# Displays next pages #}
+                {# Muestra las páginas siguientes #}
                {% if page_obj.has_next %}
                     <a class="btn btn-outline-info mb-4"
                        href="?page={{ page_obj.next_page_number }}">Siguiente

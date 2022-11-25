@@ -16,7 +16,7 @@ from blog.forms.account.register_forms import UserRegisterForm
 
 class UserRegisterView(View):
     """
-      View to let users register
+     Vista para permitir que los usuarios se registren
     """
     template_name = 'account/register.html'
     context_object = {
@@ -36,7 +36,7 @@ class UserRegisterView(View):
             user.save()
 
             current_site = get_current_site(request)
-            subject = 'Activate Your Bona Blog Account'
+            subject = 'Active su cuenta del blog'
             message = render_to_string('account/account_activation_email.html',
             {
                 'user': user,
@@ -49,7 +49,7 @@ class UserRegisterView(View):
             return redirect('blog:account_activation_sent')
 
         else:
-            messages.error(request, "Please provide valid information.")
+            messages.error(request, "Proporcione información válida.")
             # Redirect user to register page
             return render(request, self.template_name, self.context_object)
 
@@ -79,9 +79,9 @@ class ActivateView(View):
 
             username = user.username
 
-            messages.success(request, f"Congratulations {username} !!! "
-                                      f"Your account was created and activated "
-                                      f"successfully"
+            messages.success(request, f"Congratulalaciones {username} !!! "
+                                      f"Su cuenta fue creada y activada "
+                                      f"exitosamente"
                              )
 
             return redirect('blog:login')

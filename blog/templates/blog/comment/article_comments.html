@@ -16,7 +16,7 @@
     <br><br>
     	<section class="comment-section center-text">
 		<div class="container">
-        <p><b>SHOWING COMMENTS FOR: </b></p>
+        <p><b>MOSTRANDO COMENTARIOS DE: </b></p>
             <div class="row">
 
 				<div class="col-lg-2 col-md-0"></div>
@@ -37,7 +37,7 @@
                                             </div>
 
                                             <div class="right-area">
-                                                <h6 class="reply-btn" ><b>COMMENTS ({{ article.comments.count }})</b></h6>
+                                                <h6 class="reply-btn" ><b>COMENTARIOS ({{ article.comments.count }})</b></h6>
                                             </div>
 
                                         </div><!-- post-info -->
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-{#			<h5><b>POST COMMENTS</b></h5>#}
+{#			<h5><b>PUBLICAR COMENTARIOS</b></h5>#}
 			<div class="row">
 
 				<div class="col-lg-2 col-md-0"></div>
@@ -79,7 +79,7 @@
 {#					</div><!-- comment-form -->#}
 
 
-                    <h5><b>COMMENTS</b></h5>
+                    <h5><b>COMENTARIOS</b></h5>
                     {% if comments %}
 					<div class="comments-area text-left">
                         {% for comment in comments %}
@@ -105,21 +105,21 @@
 
 					</div><!-- commnets-area -->
                     {% else %}
-                      <div class="alert alert-warning"><b>No Comments</b></div>
+                      <div class="alert alert-warning"><b>Sin comentarios</b></div>
                     {% endif %}
 
-                {# Pagination for article post #}
+                {# Paginación para publicación de artículo #}
             {% if is_paginated %}
 
                 {# Displays previous pages #}
                 {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                    <a class="btn btn-outline-info mb-4" href="?page=1">Primero</a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.previous_page_number }}">Previous
+                       href="?page={{ page_obj.previous_page_number }}">Anterior
                     </a>
                 {% endif %}
 
-                {# Displays current page #}
+                {# Muestra la página actual #}
                 {% for num in page_obj.paginator.page_range %}
                     {% if page_obj.number == num %}
                         <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
@@ -128,13 +128,13 @@
                     {% endif %}
                  {% endfor %}
 
-                {# Displays next pages #}
+                {# Muestra las páginas siguientes #}
                {% if page_obj.has_next %}
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.next_page_number }}">Next
+                       href="?page={{ page_obj.next_page_number }}">Siguiente
                     </a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.paginator.num_pages }}">Last
+                       href="?page={{ page_obj.paginator.num_pages }}">Último
                     </a>
                 {% endif %}
 

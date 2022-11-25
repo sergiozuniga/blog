@@ -1,7 +1,7 @@
 {% extends 'blog/blog_base.html' %}
 
 {% block title %}
- Search Results
+ Resultados de la búsqueda
 {% endblock title %}
 
 {% block messages %}
@@ -102,18 +102,18 @@
                 {% endfor %}
 			</div><!-- row -->
             {% endif %}
-                {# Pagination for article post #}
+                {# Paginación para publicación de artículo #}
             {% if is_paginated %}
 
-                {# Displays previous pages #}
+                {# Muestra las páginas anteriores #}
                 {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                    <a class="btn btn-outline-info mb-4" href="?page=1">Primero</a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.previous_page_number }}">Previous
+                       href="?page={{ page_obj.previous_page_number }}">Anterior
                     </a>
                 {% endif %}
 
-                {# Displays current page #}
+                {# Muestra la página actual #}
                 {% for num in page_obj.paginator.page_range %}
                     {% if page_obj.number == num %}
                         <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
@@ -122,13 +122,13 @@
                     {% endif %}
                  {% endfor %}
 
-                {# Displays next pages #}
+                {# Muestra las páginas siguientes #}
                {% if page_obj.has_next %}
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.next_page_number }}">Next
+                       href="?page={{ page_obj.next_page_number }}">Próximo
                     </a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.paginator.num_pages }}">Last
+                       href="?page={{ page_obj.paginator.num_pages }}">Último
                     </a>
                 {% endif %}
 

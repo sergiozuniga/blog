@@ -1,7 +1,7 @@
 {% extends 'blog/blog_base.html' %}
 
 {% block title %}
-    Author
+    Autor
 {% endblock title %}
 
 
@@ -38,7 +38,7 @@
 								<h4 class="title"><a href="{{ article.get_absolute_url }}"><b>{{ article.title }}</b></a></h4>
 
 								<ul class="post-footer">
-									<li><a><i class="ion-ios-clock"></i>{{ article.read_time }} min{{ article.read_time|pluralize }} read</a></li>
+									<li><a><i class="ion-ios-clock"></i>{{ article.read_time }} min{{ article.read_time|pluralize }} leido</a></li>
 									<li><i class="ion-chatbubbles"></i>{{ article.comments.count }}</li>
 									<li><i class="ion-eye"></i>{{ article.views }}</li>
 								</ul>
@@ -51,20 +51,20 @@
               {% endfor %}
 			</div><!-- row -->
             {% else %}
-              <center><div class="alert alert-info"><b>No Articles</b></div></center>
+              <center><div class="alert alert-info"><b>Sin artículos</b></div></center>
            {% endif %}
-                {# Pagination for article post #}
+                {# Paginación para publicación de artículo #}
             {% if is_paginated %}
 
                 {# Displays previous pages #}
                 {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                    <a class="btn btn-outline-info mb-4" href="?page=1">Primero</a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.previous_page_number }}">Previous
+                       href="?page={{ page_obj.previous_page_number }}">Anterior
                     </a>
                 {% endif %}
 
-                {# Displays current page #}
+                {# Muestra la página actual #}
                 {% for num in page_obj.paginator.page_range %}
                     {% if page_obj.number == num %}
                         <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
@@ -73,13 +73,13 @@
                     {% endif %}
                  {% endfor %}
 
-                {# Displays next pages #}
+                {# Muestra las páginas siguientes #}
                {% if page_obj.has_next %}
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.next_page_number }}">Next
+                       href="?page={{ page_obj.next_page_number }}">Siguiente
                     </a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.paginator.num_pages }}">Last
+                       href="?page={{ page_obj.paginator.num_pages }}">Último
                     </a>
                 {% endif %}
 

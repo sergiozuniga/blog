@@ -1,7 +1,7 @@
 {% extends 'blog/blog_base.html' %}
 
 {% block title %}
- Tag Articles List
+ Lista de etiquetas de artículos
 {% endblock title %}
 
 {% block messages %}
@@ -21,7 +21,7 @@
                             <img src="{{ category.image.url }}"
                                  class="category-image"
                                  width="352" height="235"
-                                 alt="Blog Image">
+                                 alt="Imagen blog">
                         </div>
 
 						<div class="category">
@@ -40,7 +40,7 @@
 
 	</div><!-- slider -->
     {% else %}
-        <center><div class="alert alert-warning"><b>No Categories</b></div></center>
+        <center><div class="alert alert-warning"><b>Sin categorías</b></div></center>
     {% endif %}
 
 	<section class="blog-area section">
@@ -81,7 +81,7 @@
                             </div>
 
 							<a class="avatar" href="{% url 'blog:author_articles' article.author.username %}">
-                                <img src="{{ article.author.profile.image.url }}" alt="Profile Image"
+                                <img src="{{ article.author.profile.image.url }}" alt="Imagen del perfil"
                                      class="profile-image">
                             </a>
 
@@ -102,18 +102,18 @@
                 {% endfor %}
 			</div><!-- row -->
             {% endif %}
-                {# Pagination for article post #}
+                {# Paginación para publicación de artículo #}
             {% if is_paginated %}
 
                 {# Displays previous pages #}
                 {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                    <a class="btn btn-outline-info mb-4" href="?page=1">Primero</a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.previous_page_number }}">Previous
+                       href="?page={{ page_obj.previous_page_number }}">Anterior
                     </a>
                 {% endif %}
 
-                {# Displays current page #}
+                {# Muestra la página actual #}
                 {% for num in page_obj.paginator.page_range %}
                     {% if page_obj.number == num %}
                         <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
@@ -122,13 +122,13 @@
                     {% endif %}
                  {% endfor %}
 
-                {# Displays next pages #}
+                {# Muestra las páginas siguientes #}
                {% if page_obj.has_next %}
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.next_page_number }}">Next
+                       href="?page={{ page_obj.next_page_number }}">Siguiente
                     </a>
                     <a class="btn btn-outline-info mb-4"
-                       href="?page={{ page_obj.paginator.num_pages }}">Last
+                       href="?page={{ page_obj.paginator.num_pages }}">Último
                     </a>
                 {% endif %}
 

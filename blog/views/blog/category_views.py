@@ -49,9 +49,9 @@ class CategoryCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         form.instance.save()
         messages.success(self.request, f"'{form.instance.name}' "
-                                       f"submitted successfully. You will be "
-                                       f"notified when it is approved."
-                                       f"Thank you !!!")
+                                       f"Enviado satisfactoriamente. Tú serás "
+                                       f"notificado cuando sea aprobado."
+                                       f"Gracias !!!")
         return redirect('/')
 
 
@@ -61,4 +61,4 @@ class CategoryUpdateCreateView(LoginRequiredMixin, SuccessMessageMixin,
     fields = ["name", "image"]
     template_name = 'blog/category/category_form.html'
     success_url = reverse_lazy("blog:categories_list")
-    success_message = "Category Updated Successfully"
+    success_message = "Categoría actualizada con éxito"

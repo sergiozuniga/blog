@@ -20,7 +20,7 @@ class CommentCreateView(CreateView):
         comment.article = get_object_or_404(Article,
                                             slug=self.kwargs.get('slug'))
         comment.save()
-        messages.success(self.request, "Comment Added successfully")
+        messages.success(self.request, "Comentario añadido con éxito")
         return redirect('blog:article_comments', comment.article.slug)
 
 

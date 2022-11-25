@@ -14,7 +14,7 @@ from blog.forms.dashboard.author.author_forms import (
 
 class AuthorProfileView(LoginRequiredMixin, View):
     """
-    Displays author profile details
+    Muestra los detalles del perfil del autor.
     """
     template_name = "dashboard/author/author_profile_detail.html"
     context_object = {}
@@ -28,7 +28,7 @@ class AuthorProfileView(LoginRequiredMixin, View):
 
 class AuthorProfileUpdateView(LoginRequiredMixin, View):
     """
-     Updates author profile details
+     Actualiza los detalles del perfil del autor
     """
     template_name = 'dashboard/author/author_profile_update.html'
     context_object = {}
@@ -52,8 +52,8 @@ class AuthorProfileUpdateView(LoginRequiredMixin, View):
             user_form.save()
             profile_form.save()
 
-            messages.success(request, f'Your account has successfully '
-                                      f'been updated!')
+            messages.success(request, f'Su cuenta ha sido actualizada '
+                                      f'de manera exitosa!')
             return redirect('blog:author_profile_details')
 
         else:
@@ -63,7 +63,7 @@ class AuthorProfileUpdateView(LoginRequiredMixin, View):
             self.context_object['user_form'] = user_form
             self.context_object['profile_form'] = profile_form
 
-            messages.error(request, f'Invalid data. Please provide valid data.')
+            messages.error(request, f'Datos inválidos. Por favor proporcione datos válidos.')
             return render(request, self.template_name, self.context_object)
 
 
