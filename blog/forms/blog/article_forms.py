@@ -13,7 +13,7 @@ from blog.models.category_models import Category
 class ArticleCreateForm(forms.ModelForm):
     category = forms.ModelChoiceField(queryset=Category.objects.filter(
                                       approved=True),
-                                      empty_label="Select Category",
+                                      empty_label="Elegir categoría",
                                       widget=forms.Select(attrs=
                                                           {
                                                               "class": "form-control selectpicker",
@@ -28,13 +28,13 @@ class ArticleCreateForm(forms.ModelForm):
     class Meta:
 
         # Article status constants
-        DRAFTED = "DRAFTED"
-        PUBLISHED = "PUBLISHED"
+        DRAFTED = "BORRADOR"
+        PUBLISHED = "PUBLICADO"
 
         # CHOICES
         STATUS_CHOICES = (
-            (DRAFTED, 'Draft'),
-            (PUBLISHED, 'Publish'),
+            (DRAFTED, 'Borrador'),
+            (PUBLISHED, 'Publicado'),
         )
 
         model = Article
@@ -43,7 +43,7 @@ class ArticleCreateForm(forms.ModelForm):
             'title': TextInput(attrs={
                                      'name': "article-title",
                                      'class': "form-control",
-                                     'placeholder': "Enter Article Title",
+                                     'placeholder': "Ingrese nombre artículo",
                                      'id': "articleTitle"
                                      }),
 
@@ -59,7 +59,7 @@ class ArticleCreateForm(forms.ModelForm):
             'image_credit': TextInput(attrs={
                 'name': "image_credit",
                 'class': "form-control",
-                'placeholder': "Example: made4dev.com (Premium Programming T-shirts)",
+                'placeholder': "Ejemplo: made4dev.com (Poleras Premium)",
                 'id': "image_credit"
             }),
 
@@ -73,7 +73,7 @@ class ArticleCreateForm(forms.ModelForm):
             'tags': TextInput(attrs={
                                      'name': "tags",
                                      'class': "form-control",
-                                     'placeholder': "Example: sports, game, politics",
+                                     'placeholder': "Ejemplo: deportes, juegos, política",
                                      'id': "tags",
                                      'data-role': "tagsinput"
                                      }),
@@ -85,7 +85,7 @@ class ArticleCreateForm(forms.ModelForm):
                                  "name": "status", "type": "text",
                                  "id": "articleStatus",
                                  "data-live-search": "true",
-                                 "title": "Select Status"
+                                 "title": "Seleccionar estado"
                              }
                              ),
         }
@@ -94,7 +94,7 @@ class ArticleCreateForm(forms.ModelForm):
 class ArticleUpdateForm(forms.ModelForm):
     category = forms.ModelChoiceField(queryset=Category.objects.filter(
                                       approved=True),
-                                      empty_label="Select Category",
+                                      empty_label="Elegir categoría",
                                       widget=forms.Select(attrs=
                                                           {
                                                               "class": "form-control selectpicker",
@@ -108,13 +108,13 @@ class ArticleUpdateForm(forms.ModelForm):
 
     class Meta:
         # Article status constants
-        DRAFTED = "DRAFTED"
-        PUBLISHED = "PUBLISHED"
+        DRAFTED = "BORRADOR"
+        PUBLISHED = "PUBLICADO"
 
         # CHOICES
         STATUS_CHOICES = (
-            (DRAFTED, 'Draft'),
-            (PUBLISHED, 'Publish'),
+            (DRAFTED, 'Borrador'),
+            (PUBLISHED, 'Publicado'),
         )
 
         model = Article
@@ -123,14 +123,14 @@ class ArticleUpdateForm(forms.ModelForm):
             'title': TextInput(attrs={
                 'name': "article-title",
                 'class': "form-control",
-                'placeholder': "Enter Article Title",
+                'placeholder': "Ingrese el título del artículo",
                 'id': "articleTitle"
             }),
 
             'image_credit': TextInput(attrs={
                 'name': "image_credit",
                 'class': "form-control",
-                'placeholder': "Example: made4dev.com (Premium Programming T-shirts)",
+                'placeholder': "Ejemplo: made4dev.com (Poleras Premium)",
                 'id': "image_credit"
             }),
 
@@ -141,7 +141,7 @@ class ArticleUpdateForm(forms.ModelForm):
                                  "name": "status", "type": "text",
                                  "id": "articleStatus",
                                  "data-live-search": "true",
-                                 "title": "Select Status"
+                                 "title": "Seleccionar estado"
                              }
                              ),
             'body': forms.CharField(widget=CKEditorWidget(config_name="default", attrs={

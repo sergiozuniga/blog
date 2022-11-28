@@ -17,13 +17,13 @@ from blog.models.category_models import Category
 class Article(models.Model):
 
     # Article status constants
-    DRAFTED = "DRAFTED"
-    PUBLISHED = "PUBLISHED"
+    DRAFTED = "BORRADOR"
+    PUBLISHED = "PUBLICADO"
 
     # CHOICES
     STATUS_CHOICES = (
-        (DRAFTED, 'Draft'),
-        (PUBLISHED, 'Publish'),
+        (DRAFTED, 'Borrador'),
+        (PUBLISHED, 'Publicado'),
     )
 
     # BLOG MODEL FIELDS
@@ -43,7 +43,7 @@ class Article(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES,
-                              default='DRAFT')
+                              default='BORRADOR')
     views = models.PositiveIntegerField(default=0)
     count_words = models.CharField(max_length=50, default=0)
     read_time = models.CharField(max_length=50, default=0)

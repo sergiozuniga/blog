@@ -20,57 +20,56 @@
 
             <div class="card shadow-sm mb-3 w-100">
 
-            <h4 class="card-header">Write A New Article</h4>
+            <h4 class="card-header">Escribir un nuevo artículo</h4>
 
             <div class="card-body">
                     <form method="POST" action="{% url 'blog:article_write' %}" id="articleForm" enctype="multipart/form-data"
                           novalidate>
                         {% csrf_token %}
                               <div class="form-group">
-                                <label for="articleTitle">Article Title*</label>
+                                <label for="articleTitle">Nombre artículo*</label>
                                     <h6 class="text-danger">{{ article_create_form.title.errors }}</h6>
                                     {{ article_create_form.title }}
                               </div>
                               <div class="form-group">
-                                <label for="articleCategory">Select Category*</label>
+                                <label for="articleCategory">Seleccionar categoría*</label>
                                   <h6 class="text-danger">{{ article_create_form.category.errors }}</h6>
                                     {{ article_create_form.category }}
                               </div>
                               <div class="form-group">
-                                <label for="articleImage">Upload Article Image*</label>
+                                <label for="articleImage">Subir imagen artículo*</label>
                                   <h6 class="text-danger">{{ article_create_form.image.errors }}</h6>
                                     {{ article_create_form.image }}
                               </div>
                               <div class="form-group">
-                                <label for="image_credit">Image Credit</label>
+                                <label for="image_credit">Credito imagen</label>
                                     <h6 class="text-danger">{{ article_create_form.image_credit.errors }}</h6>
                                     {{ article_create_form.image_credit }}
                               </div>
                               <div class="form-group">
-                                  <label for="article-content">Content*</label>
+                                  <label for="article-content">Contenido*</label>
                                   <h6 class="text-danger">{{ article_create_form.body.errors }}</h6>
                                   {{ article_create_form.body }}
                               </div>
                               <div class="form-group">
-                                <label for="articleTags">Enter Tags*</label>
+                                <label for="articleTags">Ingresar etiquetas*</label>
                                   <h6 class="text-danger">{{ article_create_form.tags.errors }}</h6>
                                    {{ article_create_form.tags }}
 
                               <small id="hint_id_tags" class="form-text text-muted">
-                                  A comma-separated list of tags.</small>
+                                Una lista de etiquetas separadas por comas.</small>
                               </div>
                               <div class="form-group">
-                                <label for="articleImage">Status*</label>
+                                <label for="articleImage">Estados*</label>
                                   <h6 class="text-danger">{{ article_create_form.status.errors }}</h6>
                                    {{ article_create_form.status }}
                               </div>
                             <div class="form-group float-right">
-                                <button type="reset" class="btn btn-danger">Reset Form</button>
+                                <button type="reset" class="btn btn-danger">LIMPIAR FORMULARIO</button>
                                 <button class="btn btn-dark" name="action"
-                                        value="SAVE_AS_DRAFT" type="submit">SAVE AS DRAFT</button>
+                                        value="SAVE_AS_DRAFT" type="submit">GUARDAR COMO BORRADOR</button>
 
-                                <button class="btn btn-primary" name="action" value="PUBLISH"
-                                        type="submit">PUBLISH</button>
+                                <button class="btn btn-primary" name="action" value="PUBLICAR" type="submit">PUBLICAR</button>
                             </div>
                     </form>
             </div>

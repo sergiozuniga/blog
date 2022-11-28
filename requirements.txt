@@ -5,7 +5,6 @@ django-taggit
 djangorestframework
 model-mommy
 Pillow
-django-debug-toolbar
 django-ckeditor
 django-crispy-forms
 mysqlclient

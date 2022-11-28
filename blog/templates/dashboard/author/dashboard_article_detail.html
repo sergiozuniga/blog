@@ -21,12 +21,12 @@
 				    <h2 class="title mb-2">{{ article.title }}</h2>
 				    <div class="meta mb-3">
                         {% if article.status == "PUBLISHED" %}
-                           <span class="date">Published {{ article.date_published.date|timesince|upto:','}} ago</span>
+                           <span class="date">Publicado {{ article.date_published.date|timesince|hasta:','}} atrás</span>
                         {% else  %}
-                            <span class="date">Created {{ article.date_created.date|timesince|upto:',' }} ago</span>
+                            <span class="date">Created {{ article.date_created.date|timesince|hasta:',' }} atrás</span>
                         {% endif %}
                         <span class="time">{{ article.count_words }} word{{ article.count_words|pluralize }}</span>
-                        <span class="time">{{ article.read_time }} min{{ article.read_time|pluralize }} read</span>
+                        <span class="time">{{ article.read_time }} min{{ article.read_time|pluralize }} leido</span>
                       <div class="float-right">
                         <span class="date">
                             <a href="mailto:?subject={{ article.title }}&amp;body=Check out this article {{ request.build_absolute_uri }}" target="_blank">
@@ -62,10 +62,10 @@
 
 			    <div class="blog-post-body">
 				    <figure class="blog-banner">
-				        <img class="img-fluid" id="article-detail-image" src="{{ article.image.url }}" alt="image">
+				        <img class="img-fluid" id="article-detail-image" src="read{{ article.image.url }}" alt="image">
 				       {% if article.image_credit %}
                            <figcaption class="mt-2 text-center image-caption">
-                            Image Credit: {{ article.image_credit}})
+                            Credito imagen: {{ article.image_credit}})
                         </figcaption>
                        {% endif %}
                     </figure>

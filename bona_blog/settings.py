@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework',
     'taggit',
-    'debug_toolbar',
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
@@ -57,7 +56,6 @@ INSTALLED_APPS = [
 INTERNAL_IPS = ['127.0.0.1', '::1']
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

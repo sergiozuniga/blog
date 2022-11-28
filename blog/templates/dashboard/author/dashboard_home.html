@@ -132,8 +132,8 @@
                                         <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ article.image.url }}" alt="image">
                                         <div class="media-body">
                                             <h3 class="title mb-1"><a href="{% url 'blog:dashboard_article_detail' slug=article.slug %}">{{ article.title }}</a></h3>
-                                            <div class="meta mb-1"><span class="date"><b>Publicado:</b>  <i>{{ article.date_published|timesince|upto:',' }} hace</i></span>
-                                                <span class="time">{{ article.count_words }} word{{ article.count_words|pluralize }}</span>
+                                            <div class="meta mb-1"><span class="date"><b>Publicado:</b>  <i>{{ article.date_published|timesince|hasta:',' }} atrás</i></span>
+                                                <span class="time">{{ article.count_words }} palabra{{ article.count_words|pluralize }}</span>
                                                 <span class="time">{{ article.read_time }} min{{ article.read_time|pluralize }} leido</span>
                                                 <span class="comment">{{ article.views }} view{{ article.views|pluralize }}</span>
                                                 <span class="comment"><a href="#">{{ article.comments.count }} comentario{{ article.comments.count|pluralize }}</a></span>

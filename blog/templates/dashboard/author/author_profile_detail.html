@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Profile Details
+   Detalles perfil
 {% endblock title %}
 
 {% block stylesheets %}
@@ -27,13 +27,13 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
                             <a href="{% url 'blog:author_profile_update' %}" class="btn btn-success btn-block follow">
                                 <i class="fas fa-edit fa-sm fa-fw"></i>
-                                Update Profile</a>
+                                Actualización perfil</a>
                             <!--<button class="btn btn-warning btn-block">Descargar Curriculum</button>-->
                         </div>
                         <div class="row user-detail-row">
                             <div class="col-md-12 col-sm-12 user-detail-section2 pull-left">
                                 <div class="border"></div>
-                                <p class="text-dark">SOCIAL MEDIA</p>
+                                <p class="text-dark">REDES SOCIALES</p>
                                 <span>
                                     <a href="{{ author_profile_details.profile.facebook_url }}"><i class="fab fa-facebook"></i></a>
                                     <a href="{{ author_profile_details.profile.twitter_url }}"><i class="fab fa-twitter"></i></a>
@@ -59,12 +59,12 @@
                                     {% if  author_profile_details.profile.job_title %}
                                     <h5>{{ author_profile_details.profile.job_title }}</h5>
                                     {% else %}
-                                    <h5>No Profession/Job Title</h5>
+                                    <h5>Sin Profesión/Puesto trabajo</h5>
                                     {% endif %}
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-6 profile-header-section1 text-right pull-rigth">
                                     <a href="{% url 'blog:home' %}" target="_blank" class="btn btn-primary btn-block">
-                                        <i class="fas fa-paper-plane fa-sm text-white-50"></i> Visit Website</a>
+                                        <i class="fas fa-paper-plane fa-sm text-white-50"></i> Visitar Sitio Web</a>
                                 </div>
                             </div>
                         </div>
@@ -73,10 +73,10 @@
                                 <div class="col-md-8">
                                         <ul class="nav nav-tabs" role="tablist">
                                                 <li class="nav-item">
-                                                  <a class="nav-link active mb-1" href="#profile" role="tab" data-toggle="tab"><i class="fas fa-user-circle"></i> Profile</a>
+                                                  <a class="nav-link active mb-1" href="#profile" role="tab" data-toggle="tab"><i class="fas fa-user-circle"></i> Perfil</a>
                                                 </li>
                                                 <li class="nav-item disabled">
-                                                  <a class="nav-link mb-1" href="#buzz" role="tab" data-toggle="tab"><i class="fas fa-info-circle"></i> Profile Details</a>
+                                                  <a class="nav-link mb-1" href="#buzz" role="tab" data-toggle="tab"><i class="fas fa-info-circle"></i> Detalles perfil</a>
                                                 </li>
                                               </ul>
 
@@ -85,7 +85,7 @@
                                                 <div role="tabpanel" class="tab-pane fade show active" id="profile">
                                                         <div class="row mt-1">
                                                                 <div class="col-md-3">
-                                                                    <label class="font-italic text-dark">First Name</label>
+                                                                    <label class="font-italic text-dark">Nombre</label>
                                                                 </div>
                                                                 <div class="col-md-9">
                                                                     <p>{{ author_profile_details.first_name }}</p>
@@ -93,7 +93,7 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label class="font-italic text-dark">Last Name</label>
+                                                                    <label class="font-italic text-dark">Apellido</label>
                                                                 </div>
                                                                 <div class="col-md-9">
                                                                     <p>{{ author_profile_details.last_name }}</p>
@@ -109,10 +109,10 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label class="font-italic text-dark">Location</label>
+                                                                    <label class="font-italic text-dark">Ubicación</label>
                                                                 </div>
                                                                 <div class="col-md-9">
-                                                                    {% if author_profile_details.profile.city and author_profile_details.profile.country %}
+                                                                    {% if author_profile_details.profile.city y author_profile_details.profile.country %}
                                                                     <p>{{ author_profile_details.profile.city }},
                                                                         {{ author_profile_details.profile.country }}</p>
                                                                     {% else %}
@@ -122,13 +122,13 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label class="font-italic text-dark">Account Status</label>
+                                                                    <label class="font-italic text-dark">Estado cuenta</label>
                                                                 </div>
                                                                 <div class="col-md-9">
                                                                     {% if author_profile_details.is_active %}
-                                                                    <p class="text-success">Active</p>
+                                                                    <p class="text-success">Activar</p>
                                                                     {% else %}
-                                                                    <p class="text-danger">Deactivated (Contact Admin to activate your Account)</p>
+                                                                    <p class="text-danger">Desactivar (Póngase en contacto con el administrador para activar su cuenta)</p>
                                                                     {% endif %}
                                                                 </div>
                                                             </div>
@@ -136,13 +136,13 @@
                                                 <div role="tabpanel" class="tab-pane fade" id="buzz">
                                                         <div class="row mt-1">
                                                                 <div class="col-md-4">
-                                                                    <label class="font-italic text-dark">Profession</label>
+                                                                    <label class="font-italic text-dark">Profesión</label>
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <p>{{ author_profile_details.profile.job_title }}</p>
                                                                 </div>
                                                             <div class="col-md-4">
-                                                                    <label class="font-italic text-dark">Biography</label>
+                                                                    <label class="font-italic text-dark">Biografía</label>
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <p>{{ author_profile_details.profile.bio }}</p>
@@ -150,10 +150,10 @@
                                                             </div>
                                                            <div class="row">
                                                                 <div class="col-md-4">
-                                                                    <label class="font-italic text-dark">Address</label>
+                                                                    <label class="font-italic text-dark">Dirección</label>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    {% if author_profile_details.profile.address and author_profile_details.profile.city and author_profile_details.profile.country %}
+                                                                    {% if author_profile_details.profile.address and author_profile_details.profile.city y author_profile_details.profile.country %}
                                                                     <p>{{ author_profile_details.profile.address }}, {{ author_profile_details.profile.city }},
                                                                         {{ author_profile_details.profile.country }}</p>
                                                                     {% else %}
@@ -163,7 +163,7 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4">
-                                                                    <label class="font-italic text-dark">Date Joined</label>
+                                                                    <label class="font-italic text-dark">Fecha registro</label>
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <p>{{ author_profile_details.date_joined.date }}</p>
@@ -179,9 +179,9 @@
                                         <div class="col-md-12">
                                             <div class="row image-right-part">
                                                 <div class="col-md-6 pull-left image-right-detail">
-                                                    <h6 class="text-danger">LAST LOGIN</h6>
-                                                    <p><span class="font-weight-bold">Date:</span> {{ author_profile_details.last_login.date }}</p>
-                                                    <p><span class="font-weight-bold">Time:</span> {{ author_profile_details.last_login.time }}</p>
+                                                    <h6 class="text-danger">ÚLTIMO ACCESO</h6>
+                                                    <p><span class="font-weight-bold">Fecha:</span> {{ author_profile_details.last_login.date }}</p>
+                                                    <p><span class="font-weight-bold">Hora:</span> {{ author_profile_details.last_login.time }}</p>
                                                 </div>
                                             </div>
                                         </div>
